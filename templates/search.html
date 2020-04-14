@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block head %}
+ BOOK SEARCH
+{% endblock %}
+{% block body %}
+ <form action ="search" method="POST" style="padding-top: 5cm;text-align: center;">
+     <input type="text" name="search" placeholder="Search for book">
+     <button>SEARCH</button>
+ </form>
+ <p style="text-align: center;padding-top:5cm ;font-weight: 800;"> <a href="/login" >Logout</a>  </p>
+ 
+ {% endblock %}

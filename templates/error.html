@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block head %}
+  ERROR
+{% endblock %}
+{% block body %} 
+    <h1 style="text-align: center; font-family: sans-serif;font-weight: bold;" class="display-1">OOPS</h1>
+    <p style="font-weight: bolder;text-align: center;font-size: large;"> {{mess}}</p> 
+    <p style="text-align: center;padding-top:5cm ;font-weight: 800;"> <a href="/login" >Login</a>  </p>
+    <p style="text-align: center;font-weight: 800;"><a href="/register" >Register again</a> </p>
+{% endblock %} 

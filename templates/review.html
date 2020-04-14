@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1 style="text-align: center;font-weight: bolder;"  class="display-1">Book Info</h1>
+    <div style="padding-left: 3cm;font-size: xx-large;">
+       Isbn: {{item.isbn}}
+    </div>
+    <div style="padding-left: 3cm;font-size: xx-large;">
+       Name: {{item.name}}
+    </div>
+    <div style="padding-left: 3cm;font-size: xx-large;">
+        Author: {{item.author}}
+    </div>
+    <div style="padding-left: 3cm;font-size: xx-large;">
+        Year: {{item.year}}
+    </div>
+    <div style="padding-left: 3cm;font-size: xx-large;">
+        Average Rating: {{review.average_rating}}
+    </div>
+    <div style="padding-left: 3cm;font-size: xx-large;">
+        Rating count: {{review.ratings_count}}
+    </div>
+    
+        {% if count ==1 %}
+               <div style="padding-left: 3cm;font-size: xx-large;">
+                   Review:{{rev1}}
+               </div>
+               <div style="padding-left: 3cm;font-size: xx-large;">
+                   Rating:{{rat1}}
+               </div>
+               
+        {% else %}
+               <form action="/review" method="POST" style="padding-left: 3cm;font-size: xx-large;"> 
+                   <p class="h3">Review {{ item.name }}:</p>
+                   <input name="isbn" value="{{item.isbn}}" hidden>          
+                   <textarea class="form-control" type="text" placeholder=".." name="review"></textarea>
+                   <div class="h3">Rating:
+    
+                       <select name="rating" class="form-control" value="-1">
+                           <option value="-1">Choose rating</option>
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                        </select>
+    
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+        {% endif %} 
+    <p style="text-align: center;font-weight: 800;"> <a href="/login" >Logout</a>  </p>           
+    
+
+{% endblock %}

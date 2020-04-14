@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block head %}
+ REGISTERATION
+{% endblock %}
+{% block body %}
+<h1 style="padding-left: 10cm;padding-top: 2cm; font-family: sans-serif;font-weight: bold;" class="display-1">Register</h1>
+    <form action="register" method="POST" style="padding-top: 2cm;padding-left: 10cm;">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <button>Submit</button>
+
+    </form> 
+{% endblock %}    

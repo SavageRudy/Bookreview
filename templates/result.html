@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block head %}
+ Results found
+ {% endblock %}
+ {% block body %}
+ <h1 style="padding-left: 10cm; font-family: sans-serif;font-weight: bold;" class="display-1">Result</h1>
+ <table class="table">
+    <tr> 
+        <th>Name</th>
+        <th>Author</th>
+        <th>Year</th>
+        <th>isbn</th>
+    </tr>
+    {% for item in data %}
+        <tr>
+            <td><a href="/review?isbn={{item.isbn}}"> {{ item.name }} </a></td>
+            <td>{{ item.author }}</td>
+            <td> {{ item.year }}</td> 
+            <td> {{ item.isbn }}</td> 
+        </tr>
+    {% endfor %}
+    
+    
+ </table>
+ 
+ <a href="login">Logout</a>
+{% endblock %}
